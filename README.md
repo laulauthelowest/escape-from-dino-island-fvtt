@@ -26,7 +26,7 @@ Ein inoffizielles Foundry VTT System für **Escape from Dino Island** von Sam Tu
 1. In Foundry VTT → **Spielsysteme** → **System installieren**
 2. Manifest-URL einfügen:
    ```
-   https://raw.githubusercontent.com/YOUR_USERNAME/escape-from-dino-island-fvtt/main/system.json
+   https://raw.githubusercontent.com/laulauthelowest/escape-from-dino-island-fvtt/main/system.json
    ```
 3. **Installieren** klicken
 
@@ -54,8 +54,8 @@ Der DM-Bildschirm enthält alle Zufallstabellen aus dem Spiel mit einem 🎲-Wü
 2. Lade alle Dateien hoch
 3. Passe in `system.json` die `url`, `manifest` und `download` URLs an:
    ```json
-   "manifest": "https://raw.githubusercontent.com/DEIN_NAME/escape-from-dino-island-fvtt/main/system.json",
-   "download": "https://github.com/DEIN_NAME/escape-from-dino-island-fvtt/releases/download/v1.0.0/escape-from-dino-island.zip"
+   "manifest": "https://raw.githubusercontent.com/laulauthelowest/escape-from-dino-island-fvtt/main/system.json",
+   "download": "https://github.com/laulauthelowest/escape-from-dino-island-fvtt/releases/download/v1.0.0/escape-from-dino-island.zip"
    ```
 4. Erstelle ein GitHub Release namens `v1.0.0` und lade die ZIP-Datei hoch
 
