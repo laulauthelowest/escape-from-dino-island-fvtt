@@ -1,0 +1,136 @@
+{{! templates/actors/hero-sheet.hbs }}
+<form class="efdi-sheet hero-sheet" autocomplete="off">
+
+  {{! ── Header ── }}
+  <header class="efdi-sheet-header">
+    <div class="efdi-portrait-wrap">
+      <img class="efdi-portrait" src="{{actor.img}}" title="{{actor.name}}" data-edit="img">
+    </div>
+    <div class="efdi-header-fields">
+      <div class="efdi-name-row">
+        <input class="efdi-name-input" type="text" name="name" value="{{actor.name}}" placeholder="Name…">
+        <input class="efdi-pronouns-input" type="text" name="system.pronouns"
+          value="{{system.pronouns}}" placeholder="Pronomen…">
+      </div>
+      <div class="efdi-playbook-row">
+        <label>{{localize "EFDI.Playbook.Label"}}</label>
+        <select class="efdi-playbook-select" name="system.playbook">
+          <option value="">{{localize "EFDI.Playbook.Choose"}}</option>
+          {{#each allPlaybooks}}
+            <option value="{{this.id}}" {{#if (efdiEq this.id ../playbookId)}}selected{{/if}}>
+              {{this.label}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      {{#if playbookDef}}
+      <div class="efdi-tagline">{{playbookDef.tagline}}</div>
+      {{/if}}
+    </div>
+  </header>
+
+  {{! ── Stats & Verletzungen ── }}
+  <div class="efdi-stats-damage-row">
+    <div class="efdi-stats-block">
+      <h3>{{localize "EFDI.Stats.Label"}}</h3>
+      <div class="efdi-stats">
+        {{#each stats}}
+        <div class="efdi-stat">
+          <label>{{this.label}}</label>
+          <div class="efdi-stat-value-row">
+            <input class="efdi-stat-input" type="number" data-stat="{{@key}}"
+              value="{{this.value}}" min="-3" max="3">
+            <button type="button" class="efdi-roll-stat efdi-btn-roll" data-stat="{{@key}}"
+              title="Mit {{this.label}} würfeln">
+              🎲 {{this.display}}
+            </button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      <div class="efdi-roll-bonus-row">
+        <label>🎯 {{localize "EFDI.Roll.Bonus"}}</label>
+        <input class="efdi-roll-bonus" type="number" value="{{rollBonus}}" min="-3" max="3">
+      </div>
+    </div>
+
+    <div class="efdi-damage-block">
+      <h3>{{localize "EFDI.Damage.Label"}}</h3>
+      <div class="efdi-injury">
+        <label>{{localize "EFDI.Damage.Injury1"}}</label>
+        <input class="efdi-injury-text" type="text" data-field="injury1"
+          value="{{injuries.injury1.text}}" placeholder="Verletzung beschreiben…">
+        <label class="efdi-checkbox-label">
+          <input class="efdi-injury-treated" type="checkbox" data-field="injury1.treated"
+            {{efdiChecked injuries.injury1.treated}}>
+          {{localize "EFDI.Damage.Treated"}}
+        </label>
+      </div>
+      <div class="efdi-injury">
+        <label>{{localize "EFDI.Damage.Injury2"}}</label>
+        <input class="efdi-injury-text" type="text" data-field="injury2"
+          value="{{injuries.injury2.text}}" placeholder="Verletzung beschreiben…">
+        <label class="efdi-checkbox-label">
+          <input class="efdi-injury-treated" type="checkbox" data-field="injury2.treated"
+            {{efdiChecked injuries.injury2.treated}}>
+          {{localize "EFDI.Damage.Treated"}}
+        </label>
+      </div>
+      <div class="efdi-ooc">
+        <label class="efdi-checkbox-label efdi-ooc-label">
+          <input class="efdi-out-of-commission" type="checkbox"
+            {{efdiChecked injuries.outOfCommission}}>
+          ☠️ {{localize "EFDI.Damage.OutOfCommission"}}
+        </label>
+      </div>
+    </div>
+  </div>
+
+  {{! ── Persönlichkeit / Aussehen / Gerücht ── }}
+  <div class="efdi-personality-row">
+    <div class="efdi-field-group">
+      <label>{{localize "EFDI.Character.Personality"}}</label>
+      <input type="text" name="system.personality" value="{{system.personality}}" placeholder="z.B. Besonnen, Autoritär…">
+    </div>
+    <div class="efdi-field-group">
+      <label>{{localize "EFDI.Character.Look"}}</label>
+      <input type="text" name="system.look" value="{{system.look}}" placeholder="z.B. Schick, Noch im OP-Kittel…">
+    </div>
+    {{#if hasAge}}
+    <div class="efdi-field-group efdi-field-narrow">
+      <label>{{localize "EFDI.Character.Age"}}</label>
+      <input type="number" name="system.age" value="{{system.age}}" min="8" max="16" placeholder="8–16">
+    </div>
+    {{/if}}
+  </div>
+
+  <div class="efdi-rumor-row">
+    <label>{{localize "EFDI.Rumor.Label"}}</label>
+    <textarea name="system.rumor" placeholder="{{localize "EFDI.Rumor.Placeholder"}}" rows="2">{{system.rumor}}</textarea>
+  </div>
+
+  {{! ── Tabs ── }}
+  <nav class="efdi-tabs">
+    <a class="efdi-tab" data-tab="moves">{{localize "EFDI.Character.Tab.Moves"}}</a>
+    <a class="efdi-tab" data-tab="gear">{{localize "EFDI.Character.Tab.Gear"}}</a>
+    <a class="efdi-tab" data-tab="stories">{{localize "EFDI.Character.Tab.Stories"}}</a>
+  </nav>
+
+  <div class="efdi-tab-content">
+    {{! ── Tab: Manöver ── }}
+    <div class="efdi-tab-panel" data-tab="moves">
+      {{> "systems/escape-from-dino-island/templates/actors/hero-tab-moves.hbs"}}
+    </div>
+
+    {{! ── Tab: Ausrüstung ── }}
+    <div class="efdi-tab-panel" data-tab="gear">
+      {{> "systems/escape-from-dino-island/templates/actors/hero-tab-gear.hbs"}}
+    </div>
+
+    {{! ── Tab: Geschichten ── }}
+    <div class="efdi-tab-panel" data-tab="stories">
+      {{> "systems/escape-from-dino-island/templates/actors/hero-tab-stories.hbs"}}
+    </div>
+  </div>
+
+</form>

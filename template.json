@@ -1,0 +1,55 @@
+{
+  "Actor": {
+    "hero": {
+      "playbook": "",
+      "pronouns": "",
+      "personality": "",
+      "look": "",
+      "age": null,
+      "rumor": "",
+      "stats": {
+        "clever": 0,
+        "fit": 0,
+        "steady": 0
+      },
+      "rollBonus": 0,
+      "injuries": {
+        "injury1": { "text": "", "treated": false },
+        "injury2": { "text": "", "treated": false },
+        "outOfCommission": false
+      },
+      "gear": [],
+      "stories": [],
+      "unlockedAdvances": {},
+      "hovel": "",
+      "notes": ""
+    },
+    "dinosaur": {
+      "dinoType": "",
+      "appearing": "",
+      "instinct": "",
+      "gimmick": "",
+      "moves": [],
+      "notes": ""
+    },
+    "npc": {
+      "role": "",
+      "goal": "",
+      "offer": "",
+      "status": "alive",
+      "notes": ""
+    }
+  },
+  "Item": {
+    "move": {
+      "moveType": "special",
+      "stat": "clever",
+      "description": "",
+      "unlocked": false
+    },
+    "gear": {
+      "carried": true,
+      "description": ""
+    }
+  }
+}

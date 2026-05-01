@@ -1,0 +1,37 @@
+{{! templates/chat/roll-result.hbs }}
+<div class="efdi-chat-card efdi-roll-card {{resultClass}}">
+
+  <div class="efdi-chat-header">
+    <img class="efdi-chat-portrait" src="{{actorImg}}" alt="{{actorName}}">
+    <div class="efdi-chat-title">
+      <span class="efdi-chat-actor">{{actorName}}</span>
+      <span class="efdi-move-name">{{moveName}}</span>
+    </div>
+  </div>
+
+  <div class="efdi-dice-display">
+    <div class="efdi-die efdi-die-1">{{d1}}</div>
+    <div class="efdi-die-plus">+</div>
+    <div class="efdi-die efdi-die-2">{{d2}}</div>
+    {{#if totalBonus}}
+    <div class="efdi-die-plus">+</div>
+    <div class="efdi-bonus-display">{{efdiStatMod totalBonus}}</div>
+    {{/if}}
+    <div class="efdi-die-equals">=</div>
+    <div class="efdi-total-display">{{total}}</div>
+  </div>
+
+  <div class="efdi-bonus-breakdown">Bonus: {{bonusStr}}</div>
+
+  <div class="efdi-result-banner {{resultClass}}">
+    {{resultText}}
+  </div>
+
+  {{#if moveDescription}}
+  <details class="efdi-move-details">
+    <summary>Manöver-Text lesen</summary>
+    <div class="efdi-move-desc-text">{{moveDescription}}</div>
+  </details>
+  {{/if}}
+
+</div>

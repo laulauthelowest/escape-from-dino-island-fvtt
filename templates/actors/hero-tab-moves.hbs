@@ -1,0 +1,76 @@
+{{! templates/actors/hero-tab-moves.hbs }}
+<div class="efdi-moves-tab">
+
+  {{! ── Spezial-Manöver (Playbook) ── }}
+  {{#if specialMoves.length}}
+  <section class="efdi-moves-section efdi-special-moves">
+    <h4 class="efdi-moves-heading">⭐ {{localize "EFDI.Moves.Special"}}</h4>
+    {{#each specialMoves}}
+    <div class="efdi-move-entry efdi-move-base">
+      <div class="efdi-move-header">
+        <span class="efdi-move-name">{{this.name}}</span>
+        <button type="button" class="efdi-roll-move efdi-btn-roll-sm" data-move-id="{{this.id}}"
+          title="{{this.name}} anwenden">🎲</button>
+      </div>
+      <div class="efdi-move-desc">{{this.description}}</div>
+    </div>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{! ── Fortschritts-Manöver ── }}
+  {{#if advanceMovesWithState.length}}
+  <section class="efdi-moves-section efdi-advance-moves">
+    <h4 class="efdi-moves-heading">🔓 {{localize "EFDI.Moves.Advance"}}</h4>
+    {{#each advanceMovesWithState}}
+    <div class="efdi-move-entry {{#if this.unlocked}}efdi-move-unlocked{{else}}efdi-move-locked{{/if}}">
+      <div class="efdi-move-header">
+        <label class="efdi-checkbox-label efdi-advance-label">
+          <input type="checkbox" class="efdi-unlock-advance" data-move-id="{{this.id}}"
+            {{efdiChecked this.unlocked}}>
+          <span class="efdi-move-name">{{this.name}}</span>
+        </label>
+        {{#if this.unlocked}}
+        <button type="button" class="efdi-roll-move efdi-btn-roll-sm" data-move-id="{{this.id}}"
+          title="{{this.name}} anwenden">🎲</button>
+        {{/if}}
+      </div>
+      {{#if this.unlocked}}
+      <div class="efdi-move-desc">{{this.description}}</div>
+      {{/if}}
+    </div>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{! ── Peril Moves ── }}
+  <section class="efdi-moves-section">
+    <h4 class="efdi-moves-heading">⚠️ {{localize "EFDI.Moves.Peril"}}</h4>
+    <div class="efdi-moves-grid">
+      {{#each perilMoves}}
+      <div class="efdi-move-chip">
+        <button type="button" class="efdi-roll-move efdi-move-chip-btn" data-move-id="{{this.id}}">
+          <span class="efdi-chip-name">{{this.name}}</span>
+          {{#if this.statLabel}}<span class="efdi-chip-stat">{{this.statLabel}}</span>{{/if}}
+        </button>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+  {{! ── Safety Moves ── }}
+  <section class="efdi-moves-section">
+    <h4 class="efdi-moves-heading">🌿 {{localize "EFDI.Moves.Safety"}}</h4>
+    <div class="efdi-moves-grid">
+      {{#each safetyMoves}}
+      <div class="efdi-move-chip">
+        <button type="button" class="efdi-roll-move efdi-move-chip-btn" data-move-id="{{this.id}}">
+          <span class="efdi-chip-name">{{this.name}}</span>
+          {{#if this.statLabel}}<span class="efdi-chip-stat">{{this.statLabel}}</span>{{/if}}
+        </button>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+</div>

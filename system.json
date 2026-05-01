@@ -1,0 +1,48 @@
+{
+  "id": "escape-from-dino-island",
+  "title": "Escape from Dino Island",
+  "description": "Ein Foundry VTT System für Escape from Dino Island von Sam Tung & Sam Roberts. Powered by the Apocalypse.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Community Build",
+      "url": "https://github.com/YOUR_USERNAME/escape-from-dino-island-fvtt"
+    }
+  ],
+  "esmodules": ["scripts/efdi.mjs"],
+  "styles": ["styles/efdi.css"],
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "hero": {},
+      "dinosaur": {},
+      "npc": {}
+    },
+    "Item": {
+      "move": {},
+      "gear": {}
+    }
+  },
+  "url": "https://github.com/YOUR_USERNAME/escape-from-dino-island-fvtt",
+  "manifest": "https://raw.githubusercontent.com/YOUR_USERNAME/escape-from-dino-island-fvtt/main/system.json",
+  "download": "https://github.com/YOUR_USERNAME/escape-from-dino-island-fvtt/releases/download/v1.0.0/escape-from-dino-island.zip",
+  "license": "CC-BY-4.0",
+  "readme": "README.md",
+  "socket": false
+}

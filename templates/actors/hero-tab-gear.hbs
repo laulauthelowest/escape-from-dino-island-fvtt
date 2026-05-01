@@ -1,0 +1,22 @@
+{{! templates/actors/hero-tab-gear.hbs }}
+<div class="efdi-gear-tab">
+  <div class="efdi-gear-header">
+    <h4>{{localize "EFDI.Gear.Label"}}</h4>
+    <button type="button" class="efdi-add-gear efdi-btn-add">+ {{localize "EFDI.Gear.AddItem"}}</button>
+  </div>
+  <ul class="efdi-gear-list">
+    {{#each gear}}
+    <li class="efdi-gear-item">
+      <input class="efdi-gear-carried" type="checkbox" data-idx="{{@index}}"
+        {{efdiChecked this.carried}} title="Dabei">
+      <input class="efdi-gear-name" type="text" data-idx="{{@index}}"
+        value="{{this.name}}" placeholder="Gegenstand…">
+      <button type="button" class="efdi-delete-gear efdi-btn-del" data-idx="{{@index}}"
+        title="Löschen">✕</button>
+    </li>
+    {{/each}}
+    {{#unless gear.length}}
+    <li class="efdi-gear-empty">Noch keine Ausrüstung. Wähle eine Charakterklasse oder füge manuell hinzu.</li>
+    {{/unless}}
+  </ul>
+</div>

@@ -1,0 +1,122 @@
+{
+  "EFDI": {
+    "System": "Escape from Dino Island",
+    "Playbook": {
+      "Label": "Playbook",
+      "Choose": "Choose a playbook...",
+      "doctor": "The Doctor",
+      "engineer": "The Engineer",
+      "hunter": "The Hunter",
+      "kid": "The Kid",
+      "paleontologist": "The Paleontologist",
+      "soldier": "The Soldier",
+      "survivor": "The Survivor",
+      "smuggler": "The Smuggler"
+    },
+    "Stats": {
+      "Label": "Stats",
+      "clever": "Clever",
+      "fit": "Fit",
+      "steady": "Steady"
+    },
+    "Roll": {
+      "Label": "Roll",
+      "With": "Roll with",
+      "Bonus": "Bonus",
+      "Result": "Result",
+      "Miss": "Miss (6-)",
+      "Partial": "Partial Hit (7–9)",
+      "Success": "Full Hit (10+)",
+      "Dice": "Dice",
+      "Total": "Total",
+      "BonusRoll": "Bonus Roll"
+    },
+    "Moves": {
+      "Label": "Moves",
+      "Peril": "Peril Moves",
+      "Safety": "Safety Moves",
+      "Special": "Special Moves",
+      "Advance": "Advance Moves",
+      "Unlocked": "Unlocked",
+      "Locked": "Locked",
+      "UnlockMove": "Unlock Move",
+      "run": "Run! (FIT)",
+      "hide": "Hide! (CLEVER)",
+      "justdoit": "Just Do It! (STEADY)",
+      "holdonyourbutt": "Hold On To Your Butt! (FIT)",
+      "lookoverthere": "Look Over There! (CLEVER)",
+      "takemyhand": "Take My Hand! (Any)",
+      "fight": "Fight! (No bonus or +1)",
+      "layoftheland": "Lay of the Land (CLEVER)",
+      "instruct": "Instruct (STEADY)",
+      "scavenge": "Scavenge (CLEVER)",
+      "bestlaidplans": "The Best-Laid Plans"
+    },
+    "Damage": {
+      "Label": "Dino Damage",
+      "Injury1": "Injury 1",
+      "Injury2": "Injury 2",
+      "OutOfCommission": "Out of Commission",
+      "Treated": "Treated"
+    },
+    "Gear": {
+      "Label": "Gear",
+      "AddItem": "Add Item",
+      "Name": "Name",
+      "Carried": "Carried"
+    },
+    "Stories": {
+      "Label": "Stories You Tell",
+      "Told": "Told",
+      "Available": "Available"
+    },
+    "Rumor": {
+      "Label": "Rumor",
+      "Placeholder": "The rumor you heard about the island..."
+    },
+    "Character": {
+      "Name": "Name",
+      "Pronouns": "Pronouns",
+      "Personality": "Personality",
+      "Look": "Look",
+      "Age": "Age",
+      "Hovel": "Hovel",
+      "Tab": {
+        "Main": "Character",
+        "Moves": "Moves",
+        "Gear": "Gear",
+        "Stories": "Stories"
+      }
+    },
+    "DM": {
+      "Title": "DM Screen",
+      "Rumors": "Rumors",
+      "Moves": "DM Moves",
+      "NPC": "NPC Goals",
+      "Nicknames": "Dino Nicknames",
+      "Orgs": "Mysterious Orgs",
+      "Obstacles": "Obstacles",
+      "Mysteries": "Mysteries",
+      "Roll": "Roll",
+      "RollTable": "Random Table"
+    },
+    "Dinosaur": {
+      "Label": "Dinosaur",
+      "Type": "Type",
+      "Instinct": "Instinct",
+      "Gimmick": "Gimmick",
+      "Moves": "Moves",
+      "Appearing": "No. Appearing"
+    },
+    "NPC": {
+      "Label": "NPC",
+      "Goal": "Goal",
+      "Offer": "Offer"
+    },
+    "Advance": {
+      "Label": "Advance",
+      "Available": "Advance available!",
+      "Choose": "Choose an advance move"
+    }
+  }
+}

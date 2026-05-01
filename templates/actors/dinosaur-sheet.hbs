@@ -1,0 +1,52 @@
+{{! templates/actors/dinosaur-sheet.hbs }}
+<form class="efdi-sheet dinosaur-sheet" autocomplete="off">
+  <header class="efdi-sheet-header efdi-dino-header">
+    <img class="efdi-portrait efdi-dino-portrait" src="{{actor.img}}" data-edit="img">
+    <div class="efdi-header-fields">
+      <input class="efdi-name-input" type="text" name="name" value="{{actor.name}}" placeholder="Dinosaurier-Name…">
+      <div class="efdi-dino-type-row">
+        <label>Typ</label>
+        <select name="system.dinoType">
+          {{#each dinoTypes}}
+          <option value="{{this}}" {{#if (efdiEq this ../system.dinoType)}}selected{{/if}}>{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="efdi-dino-appearing">
+        <label>Anzahl</label>
+        <input type="text" name="system.appearing" value="{{system.appearing}}" placeholder="z.B. 3-5">
+      </div>
+    </div>
+  </header>
+
+  <div class="efdi-dino-body">
+    <div class="efdi-field-group">
+      <label>⚡ Instinkt</label>
+      <input type="text" name="system.instinct" value="{{system.instinct}}" placeholder="Was treibt diesen Dinosaurier an?">
+    </div>
+    <div class="efdi-field-group">
+      <label>🌀 Eigenart (Gimmick)</label>
+      <input type="text" name="system.gimmick" value="{{system.gimmick}}" placeholder="Besondere Fähigkeit oder Eigenheit…">
+    </div>
+
+    <div class="efdi-dino-moves-section">
+      <div class="efdi-moves-header">
+        <label>🦖 Manöver</label>
+        <button type="button" class="efdi-dino-move-add efdi-btn-add">+</button>
+      </div>
+      <ul class="efdi-dino-moves-list">
+        {{#each system.moves}}
+        <li class="efdi-dino-move-item">
+          <input type="text" name="system.moves.{{@index}}.text" value="{{this.text}}" placeholder="Manöver…">
+          <button type="button" class="efdi-dino-move-del efdi-btn-del" data-idx="{{@index}}">✕</button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="efdi-field-group">
+      <label>📝 Notizen</label>
+      <textarea name="system.notes" placeholder="Weitere Informationen…" rows="3">{{system.notes}}</textarea>
+    </div>
+  </div>
+</form>

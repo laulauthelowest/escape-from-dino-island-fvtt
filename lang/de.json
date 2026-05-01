@@ -1,0 +1,135 @@
+{
+  "EFDI": {
+    "System": "Escape from Dino Island",
+
+    "Playbook": {
+      "Label": "Charakterklasse",
+      "Choose": "Charakterklasse wählen...",
+      "doctor": "Die Ärztin",
+      "engineer": "Der Ingenieur",
+      "hunter": "Die Jägerin",
+      "kid": "Das Kind",
+      "paleontologist": "Der Paläontologe",
+      "soldier": "Die Soldatin",
+      "survivor": "Der Überlebende",
+      "smuggler": "Die Schmugglerin"
+    },
+
+    "Stats": {
+      "Label": "Werte",
+      "clever": "Clever",
+      "fit": "Fit",
+      "steady": "Besonnen"
+    },
+
+    "Roll": {
+      "Label": "Würfeln",
+      "With": "Würfeln mit",
+      "Bonus": "Bonus",
+      "Result": "Ergebnis",
+      "Miss": "Misserfolg (6-)",
+      "Partial": "Teilerfolg (7–9)",
+      "Success": "Voller Erfolg (10+)",
+      "Dice": "Würfelergebnis",
+      "Total": "Gesamt",
+      "BonusRoll": "Bonus-Würfelwurf"
+    },
+
+    "Moves": {
+      "Label": "Manöver",
+      "Peril": "Gefahr-Manöver",
+      "Safety": "Sicherheits-Manöver",
+      "Special": "Spezial-Manöver",
+      "Advance": "Fortschritts-Manöver",
+      "Unlocked": "Freigeschaltet",
+      "Locked": "Gesperrt",
+      "UnlockMove": "Manöver freischalten",
+      "run": "Rennen! (FIT)",
+      "hide": "Verstecken! (CLEVER)",
+      "justdoit": "Einfach machen! (BESONNEN)",
+      "holdonyourbutt": "Festhalten! (FIT)",
+      "lookoverthere": "Schau da drüben! (CLEVER)",
+      "takemyhand": "Nimm meine Hand! (beliebig)",
+      "fight": "Kämpfen! (kein Bonus oder +1)",
+      "layoftheland": "Lage erkunden (CLEVER)",
+      "instruct": "Anleiten (BESONNEN)",
+      "scavenge": "Suchen (CLEVER)",
+      "bestlaidplans": "Die besten Pläne…"
+    },
+
+    "Damage": {
+      "Label": "Dino-Schaden",
+      "Injury1": "Verletzung 1",
+      "Injury2": "Verletzung 2",
+      "OutOfCommission": "Außer Gefecht",
+      "Treated": "Behandelt"
+    },
+
+    "Gear": {
+      "Label": "Ausrüstung",
+      "AddItem": "Gegenstand hinzufügen",
+      "Name": "Name",
+      "Carried": "Dabei"
+    },
+
+    "Stories": {
+      "Label": "Deine Geschichten",
+      "Told": "Erzählt",
+      "Available": "Verfügbar"
+    },
+
+    "Rumor": {
+      "Label": "Gerücht",
+      "Placeholder": "Das Gerücht, das du über die Insel gehört hast…"
+    },
+
+    "Character": {
+      "Name": "Name",
+      "Pronouns": "Pronomen",
+      "Personality": "Persönlichkeit",
+      "Look": "Aussehen",
+      "Age": "Alter",
+      "Hovel": "Unterschlupf",
+      "Tab": {
+        "Main": "Charakter",
+        "Moves": "Manöver",
+        "Gear": "Ausrüstung",
+        "Stories": "Geschichten"
+      }
+    },
+
+    "DM": {
+      "Title": "DM-Bildschirm",
+      "Rumors": "Gerüchte",
+      "Moves": "DM-Manöver",
+      "NPC": "NPC-Ziele",
+      "Nicknames": "Dinosaurier-Spitznamen",
+      "Orgs": "Geheimnisvolle Organisationen",
+      "Obstacles": "Hindernisse",
+      "Mysteries": "Geheimnisse",
+      "Roll": "Würfeln",
+      "RollTable": "Zufallstabelle"
+    },
+
+    "Dinosaur": {
+      "Label": "Dinosaurier",
+      "Type": "Typ",
+      "Instinct": "Instinkt",
+      "Gimmick": "Eigenart",
+      "Moves": "Manöver",
+      "Appearing": "Anzahl"
+    },
+
+    "NPC": {
+      "Label": "NPC",
+      "Goal": "Ziel",
+      "Offer": "Angebot"
+    },
+
+    "Advance": {
+      "Label": "Fortschritt",
+      "Available": "Fortschritt verfügbar!",
+      "Choose": "Wähle ein Fortschritts-Manöver"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{{! templates/dialogs/roll-dialog.hbs }}
+<div class="efdi-dialog-content">
+  <p class="efdi-dialog-move-name">{{move.name}}</p>
+  <p>Dieses Manöver kann mit jedem Wert gewürfelt werden. Wähle unten.</p>
+  <div class="efdi-dialog-stats">
+    {{#each stats}}
+    <div class="efdi-dialog-stat">
+      <strong>{{this.label}}</strong>:
+      {{efdiStatMod (lookup ../actor.system.stats this.id)}}
+    </div>
+    {{/each}}
+  </div>
+</div>

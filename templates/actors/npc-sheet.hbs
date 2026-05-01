@@ -1,0 +1,46 @@
+{{! templates/actors/npc-sheet.hbs }}
+<form class="efdi-sheet npc-sheet" autocomplete="off">
+  <header class="efdi-sheet-header">
+    <img class="efdi-portrait" src="{{actor.img}}" data-edit="img">
+    <div class="efdi-header-fields">
+      <input class="efdi-name-input" type="text" name="name" value="{{actor.name}}" placeholder="NPC-Name…">
+      <div class="efdi-field-group">
+        <label>Rolle / Beruf</label>
+        <input type="text" name="system.role" value="{{system.role}}" placeholder="Wissenschaftlerin, Wachmann…">
+      </div>
+    </div>
+  </header>
+  <div class="efdi-npc-body">
+    <div class="efdi-field-group">
+      <label>🎯 Ziel</label>
+      <select name="system.goal">
+        <option value="">— wählen —</option>
+        {{#each goalOptions}}
+        <option value="{{this}}" {{#if (efdiEq this ../system.goal)}}selected{{/if}}>{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="efdi-field-group">
+      <label>🎁 Was kann er/sie anbieten?</label>
+      <select name="system.offer">
+        <option value="">— wählen —</option>
+        {{#each offerOptions}}
+        <option value="{{this}}" {{#if (efdiEq this ../system.offer)}}selected{{/if}}>{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="efdi-field-group">
+      <label>📝 Notizen</label>
+      <textarea name="system.notes" rows="4" placeholder="Persönlichkeit, Geheimnisse, Verbindungen…">{{system.notes}}</textarea>
+    </div>
+    <div class="efdi-field-group">
+      <label>💀 Status</label>
+      <select name="system.status">
+        <option value="alive" {{#if (efdiEq "alive" system.status)}}selected{{/if}}>Am Leben</option>
+        <option value="injured" {{#if (efdiEq "injured" system.status)}}selected{{/if}}>Verletzt</option>
+        <option value="dead" {{#if (efdiEq "dead" system.status)}}selected{{/if}}>Tot</option>
+        <option value="missing" {{#if (efdiEq "missing" system.status)}}selected{{/if}}>Vermisst</option>
+      </select>
+    </div>
+  </div>
+</form>

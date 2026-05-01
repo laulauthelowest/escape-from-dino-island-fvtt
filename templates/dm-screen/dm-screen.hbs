@@ -1,0 +1,156 @@
+{{! templates/dm-screen/dm-screen.hbs }}
+<div class="efdi-dm-screen">
+
+  <div class="efdi-dm-tabs">
+    <button class="efdi-dm-tab active" data-panel="moves">DM-Manöver</button>
+    <button class="efdi-dm-tab" data-panel="rumors">Gerüchte</button>
+    <button class="efdi-dm-tab" data-panel="npc">NPC</button>
+    <button class="efdi-dm-tab" data-panel="mysteries">Geheimnisse</button>
+    <button class="efdi-dm-tab" data-panel="extinction">Auslöschung</button>
+    <button class="efdi-dm-tab" data-panel="gimmicks">Dino-Eigenarten</button>
+    <button class="efdi-dm-tab" data-panel="misc">Sonstiges</button>
+  </div>
+
+  <div class="efdi-dm-panels">
+
+    {{! DM Moves }}
+    <div class="efdi-dm-panel active" data-panel="moves">
+      <h3>DM-Manöver <button class="efdi-dm-roll-btn" data-table="dmMoves">🎲 Zufällig</button></h3>
+      <ul class="efdi-dm-list">
+        {{#each dmData.dmMoves}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+
+    {{! Rumors }}
+    <div class="efdi-dm-panel" data-panel="rumors">
+      <h3>Gerüchte <button class="efdi-dm-roll-btn" data-table="rumors">🎲 Zufällig</button></h3>
+      <ol class="efdi-dm-list efdi-dm-numbered">
+        {{#each dmData.rumors}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ol>
+    </div>
+
+    {{! NPC }}
+    <div class="efdi-dm-panel" data-panel="npc">
+      <div class="efdi-dm-two-col">
+        <div>
+          <h3>NPC-Ziele <button class="efdi-dm-roll-btn" data-table="npcGoals">🎲</button></h3>
+          <ol class="efdi-dm-list efdi-dm-numbered">
+            {{#each dmData.npcGoals}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ol>
+        </div>
+        <div>
+          <h3>NPC-Angebote <button class="efdi-dm-roll-btn" data-table="npcOffers">🎲</button></h3>
+          <ol class="efdi-dm-list efdi-dm-numbered">
+            {{#each dmData.npcOffers}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    {{! Mysteries }}
+    <div class="efdi-dm-panel" data-panel="mysteries">
+      <div class="efdi-dm-two-col">
+        <div>
+          <h3>Hindernisse <button class="efdi-dm-roll-btn" data-table="obstacles">🎲</button></h3>
+          <ol class="efdi-dm-list efdi-dm-numbered">
+            {{#each dmData.obstacles}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ol>
+        </div>
+        <div>
+          <h3>Geheimnisse <button class="efdi-dm-roll-btn" data-table="mysteries">🎲</button></h3>
+          <ol class="efdi-dm-list efdi-dm-numbered">
+            {{#each dmData.mysteries}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    {{! Extinction Events }}
+    <div class="efdi-dm-panel" data-panel="extinction">
+      <h3>Auslöschungsereignisse <button class="efdi-dm-roll-btn" data-table="extinctionEvents">🎲</button></h3>
+      <ol class="efdi-dm-list efdi-dm-numbered efdi-dm-extinction">
+        {{#each dmData.extinctionEvents}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ol>
+      <div class="efdi-countdown-box">
+        <h4>⏱ Countdown</h4>
+        <div class="efdi-countdown">
+          <label><input type="checkbox"> Box 1</label>
+          <label><input type="checkbox"> Box 2</label>
+          <label><input type="checkbox"> Box 3 – EREIGNIS!</label>
+        </div>
+        <input type="text" placeholder="Beschriftung: z.B. 'Vulkan bricht aus'" style="width:100%;margin-top:6px;">
+      </div>
+    </div>
+
+    {{! Gimmicks }}
+    <div class="efdi-dm-panel" data-panel="gimmicks">
+      <h3>Dino-Eigenarten (W20) <button class="efdi-dm-roll-btn" data-table="dinoGimmicks">🎲 Würfeln</button></h3>
+      <ol class="efdi-dm-list efdi-dm-numbered efdi-dm-gimmicks">
+        {{#each dmData.dinoGimmicks}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ol>
+    </div>
+
+    {{! Misc }}
+    <div class="efdi-dm-panel" data-panel="misc">
+      <div class="efdi-dm-two-col">
+        <div>
+          <h3>Dino-Spitznamen <button class="efdi-dm-roll-btn" data-table="dinoNicknames">🎲</button></h3>
+          <ol class="efdi-dm-list efdi-dm-numbered">
+            {{#each dmData.dinoNicknames}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ol>
+          <h3 style="margin-top:12px">Geheimnisvolle Organisationen <button class="efdi-dm-roll-btn" data-table="organizations">🎲</button></h3>
+          <ol class="efdi-dm-list efdi-dm-numbered">
+            {{#each dmData.organizations}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ol>
+        </div>
+        <div>
+          <h3>Würfelwürfe</h3>
+          <p class="efdi-dm-hint">Ergebnisse erscheinen im Chat.</p>
+          <div class="efdi-dm-quickrolls">
+            <button class="efdi-dm-roll-btn efdi-dm-quickroll" data-table="rumors">🎲 Gerücht</button>
+            <button class="efdi-dm-roll-btn efdi-dm-quickroll" data-table="npcGoals">🎲 NPC-Ziel</button>
+            <button class="efdi-dm-roll-btn efdi-dm-quickroll" data-table="npcOffers">🎲 NPC-Angebot</button>
+            <button class="efdi-dm-roll-btn efdi-dm-quickroll" data-table="dinoGimmicks">🎲 Dino-Eigenart</button>
+            <button class="efdi-dm-roll-btn efdi-dm-quickroll" data-table="extinctionEvents">🎲 Auslöschung</button>
+            <button class="efdi-dm-roll-btn efdi-dm-quickroll" data-table="mysteries">🎲 Geheimnis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>{{! /panels }}
+
+</div>
+
+<script>
+  // Tab-Navigation für den DM-Screen
+  document.querySelectorAll(".efdi-dm-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      const panel = tab.dataset.panel;
+      document.querySelectorAll(".efdi-dm-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".efdi-dm-panel").forEach(p => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.querySelector(`.efdi-dm-panel[data-panel="${panel}"]`).classList.add("active");
+    });
+  });
+</script>

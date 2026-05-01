@@ -1,0 +1,22 @@
+{{! templates/actors/hero-tab-stories.hbs }}
+<div class="efdi-stories-tab">
+  <h4>{{localize "EFDI.Stories.Label"}}</h4>
+  <p class="efdi-stories-hint">Wenn ein Manöver dich auffordert, eine Geschichte zu erzählen, wähle eine aus dieser Liste und hake sie ab.</p>
+  <ul class="efdi-stories-list">
+    {{#each stories}}
+    <li class="efdi-story-item {{#if this.told}}efdi-story-told-item{{/if}}">
+      <label class="efdi-checkbox-label">
+        <input class="efdi-story-told" type="checkbox" data-idx="{{@index}}"
+          {{efdiChecked this.told}}>
+        <span class="efdi-story-text">{{this.text}}</span>
+      </label>
+    </li>
+    {{/each}}
+    {{#unless stories.length}}
+    <li class="efdi-stories-empty">Wähle zuerst eine Charakterklasse.</li>
+    {{/unless}}
+  </ul>
+  <div class="efdi-stories-count">
+    Erzählt: {{#each stories}}{{#if this.told}}●{{else}}○{{/if}}{{/each}}
+  </div>
+</div>
