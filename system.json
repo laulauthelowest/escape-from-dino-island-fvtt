@@ -41,7 +41,7 @@
   },
   "url": "https://github.com/laulauthelowest/escape-from-dino-island-fvtt",
   "manifest": "https://raw.githubusercontent.com/laulauthelowest/escape-from-dino-island-fvtt/main/system.json",
-  "download": "https://raw.githubusercontent.com/laulauthelowest/escape-from-dino-island-fvtt/main/escape-from-dino-island.zip",
+"download": "https://github.com/laulauthelowest/escape-from-dino-island-fvtt/releases/download/v1.0.1/escape-from-dino-island.zip"
   "license": "CC-BY-4.0",
   "readme": "README.md",
   "socket": false
